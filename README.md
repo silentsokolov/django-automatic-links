@@ -33,12 +33,17 @@ Settings
 ===============
 
 ``LINK_DEFAULT_LIMIT`` (default: ``0``)
+
 ``LINK_DEFAULT_EVERY`` (default: ``1``)
+
 ``LINK_DEFAULT_TARGET`` (default: ``'_blank'``)
+
 ``LINK_DEFAULT_NOFOLLOW`` (default: ``False``)
+
 ``LINK_DEFAULT_CSS_CLASS`` (default: ``None``)
 
-These values ​​are only used in the model (by default), you will still be able to customize for each link their values​​.
+These values ​​are only used in the model (by default), you will still be able to
+customize for each link their values​​.
 
 
 Example usage
@@ -55,3 +60,6 @@ Example usage
     from automatic_links.utils import render_links
 
     text = render_links('text')
+
+
+If you have many links and the process takes a long time, you need to concern yourself with cache.
