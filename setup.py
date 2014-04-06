@@ -7,7 +7,7 @@ setup(
     license='MIT',
     author='Dmitriy Sokolov',
     author_email='silentsokolov@gmail.com',
-    description='Very simple extension that adds a permissions check on the field in admin',
+    description='Application for Django, that allows you to adding keywords that will be automatically converted into links.',
     packages=['automatic_links'],
     zip_safe=False,
     include_package_data=True,
