@@ -42,7 +42,7 @@ Settings
 
 ``LINK_DEFAULT_CSS_CLASS`` (default: ``None``)
 
-These values ​​are only used in the model (by default), you will still be able to
+These values ​​are only used in the model, you will still be able to
 customize for each link their values​​.
 
 
