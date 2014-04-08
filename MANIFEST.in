@@ -1,1 +1,1 @@
-include LICENSE CHANGES README.md runtests.py automatic_links/*.py
+include LICENSE CHANGES README.rst runtests.py automatic_links/*.py
