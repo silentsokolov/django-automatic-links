@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 import sys
-from django.conf import settings #, global_settings as default_settings
-from django.core.management import execute_from_command_line
 from os import path
+from django.conf import settings
 
 if not settings.configured:
     module_root = path.dirname(path.realpath(__file__))
@@ -28,12 +27,7 @@ if not settings.configured:
     )
 
 
-# def runtests():
-#     argv = sys.argv[:1] + ['test', 'parler'] + sys.argv[1:]
-#     execute_from_command_line(argv)
-
 def main():
-    import sys
     from django.test.utils import get_runner
 
     TestRunner = get_runner(settings)

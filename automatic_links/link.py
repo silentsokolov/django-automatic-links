@@ -23,7 +23,7 @@ class Link(object):
         """
         value = match.group()
         if self.limit == 0 or self._count < self.limit:
-            if self._cycle.next() == self.every:
+            if next(self._cycle) == self.every:
                 self._count += 1
                 return self.get_render_link(value)
         return value
