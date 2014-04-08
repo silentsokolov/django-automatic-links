@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/SilentSokolov/django-automatic-links.png?branch=master
+   :target: https://travis-ci.org/SilentSokolov/django-automatic-links
+
 django-automatic-links
 ======================
 
