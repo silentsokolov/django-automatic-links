@@ -10,7 +10,7 @@ def render_links(text, queryset=None):
     Default queryset: AutomaticLink.objects.all()
     """
     if not queryset:
-        queryset = AutomaticLink.objects.all()
+        queryset = AutomaticLink.objects.filter(active=True)
 
     for link in queryset:
         l = Link(link.keyword, link.link, every=link.every, limit=link.limit, target=link.target,

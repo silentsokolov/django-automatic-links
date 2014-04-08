@@ -1,16 +1,18 @@
 django-automatic-links
-===============
+======================
 
-django-automatic-links is a reusable application for Django, that allows you to adding keywords that will be automatically converted into links.
-
+django-automatic-links is a reusable application for Django, that allows
+you to adding keywords that will be automatically converted into links.
 
 Installation
-===============
+------------
 
-### Requires
+Requires
+~~~~~~~~
+
+::
 
     django >= 1.4
-
 
 Install with ``pip``:
 
@@ -19,6 +21,8 @@ Run ``pip install git+https://github.com/SilentSokolov/django-automatic-links.gi
 Or ``pip install django-automatic-links``
 
 Open ``settings.py`` and add ``automatic_links`` to your ``INSTALLED_APPS``:
+
+.. code:: python
 
     INSTALLED_APPS = (
         ...
@@ -30,7 +34,7 @@ Run ``manager.py syncdb``
 
 
 Settings
-===============
+--------
 
 ``LINK_DEFAULT_LIMIT`` (default: ``0``)
 
@@ -47,19 +51,24 @@ customize for each link their values​​.
 
 
 Example usage
-===============
+-------------
 
-##  In templates
+In templates
+~~~~~~~~~~~~
+
+::
 
     {% load automatic_link_tags %}
     {{ object.text|add_links|safe }}
 
+In code
+~~~~~~~
 
-##  In code
+.. code:: python
 
     from automatic_links.utils import render_links
 
     text = render_links('text')
 
-
-If you have many links and the process takes a long time, you need to concern yourself with cache.
+If you have many links and the process takes a long time, you need to
+concern yourself with cache.

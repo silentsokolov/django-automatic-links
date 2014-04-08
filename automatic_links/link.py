@@ -6,7 +6,7 @@ from django.utils.text import normalize_newlines
 
 
 class Link(object):
-    def __init__(self, keyword, link, every=2, limit=0, target='_blank', nofollow=False, css_class=None):
+    def __init__(self, keyword, link, every=1, limit=0, target='_blank', nofollow=False, css_class=None):
         self.keyword = keyword
         self.link = link
         self.every = every
