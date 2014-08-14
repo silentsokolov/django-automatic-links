@@ -1,3 +1,6 @@
+0.2.1 (2014-04-07)
+    - Fix word boundaries
+
 0.2 (2014-04-07)
     - Add tests
     - Add travis

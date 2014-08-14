@@ -1,5 +1,7 @@
 import re
+
 from django.utils import unittest
+
 from automatic_links.link import Link
 from automatic_links.models import AutomaticLink
 from automatic_links.templatetags.automatic_link_tags import add_links
@@ -34,8 +36,8 @@ class AutomaticLinksTest(unittest.TestCase):
         self.assertEqual(render_text, done_text)
 
     def test_keyword_surrounded_by_tags_no_p(self):
-        original_text = 'tags: <b>keyword</b>, <i>keyword</i>, <other>keyword</other>'
-        done_text = 'tags: <b>keyword</b>, <i>keyword</i>, <other>keyword</other>'
+        original_text = 'tags: <b>keyword</b>, <i>keyword</i>, <other>keyword</other> <a href="#">keyword</a>'
+        done_text = 'tags: <b>keyword</b>, <i>keyword</i>, <other>keyword</other> <a href="#">keyword</a>'
         render_text = render_links(original_text)
         self.assertEqual(render_text, done_text)
 
@@ -75,6 +77,12 @@ class AutomaticLinksTest(unittest.TestCase):
         render_text = add_links(original_text)
         self.assertEqual(render_text, done_text)
 
+    def test_link_word_boundaries(self):
+        original_text = 'longkeywordsuper'
+        done_text = 'longkeywordsuper'
+        render_text = render_links(original_text)
+        self.assertEqual(render_text, done_text)
+
     def tearDown(self):
         self.simple_link.delete()
         self.link_with_space.delete()
@@ -92,7 +100,7 @@ class LinkTest(unittest.TestCase):
         self.assertEqual(self.link.get_render_link(), done_link)
 
     def test_link_get_regex(self):
-        done_regex = re.compile(r'(?<![^p]>)keyword(?!<[^/p])')
+        done_regex = re.compile(r'(?<![^p]>)keyword(\b)')
         self.assertEqual(self.link.regex.pattern, done_regex.pattern)
 
     def test_link_render(self):

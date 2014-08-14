@@ -40,8 +40,8 @@ class Link(object):
         Default: r'(?<![^p]>)%s(?!<[^/p])' use re.IGNORECASE
         Ignores all keywords are already in tags, except p
         """
-        keyword = self.keyword.replace(' ', '(\s+)').lower()
-        regex = re.compile(r'(?<![^p]>)%s(?!<[^/p])' % keyword, re.IGNORECASE)
+        keyword = self.keyword.replace(' ', '(\s)').lower()
+        regex = re.compile(r'(?<![^p]>)%s(\b)' % keyword, re.IGNORECASE)
         return regex
 
     def get_render_link(self, replace_word=None):
