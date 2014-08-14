@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='django-automatic-links',
-    version='0.2',
+    version='0.2.1',
     url='https://github.com/SilentSokolov/django-automatic-links',
     license='MIT',
     author='Dmitriy Sokolov',
