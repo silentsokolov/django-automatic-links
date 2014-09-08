@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/SilentSokolov/django-automatic-links.png?branch=master
-   :target: https://travis-ci.org/SilentSokolov/django-automatic-links
+.. image:: https://travis-ci.org/silentsokolov/django-automatic-links.png?branch=master
+   :target: https://travis-ci.org/silentsokolov/django-automatic-links
 
 django-automatic-links
 ======================

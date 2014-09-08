@@ -3,7 +3,6 @@
 import django
 
 from django.conf import settings, global_settings
-from django.test.utils import setup_test_environment
 from django.core.management import call_command
 
 settings.configure(
@@ -21,7 +20,7 @@ settings.configure(
     }
 )
 
-
+from django.test.utils import setup_test_environment
 setup_test_environment()
 
 if django.VERSION > (1, 7):
