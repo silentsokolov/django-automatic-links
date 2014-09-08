@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 
+@python_2_unicode_compatible
 class AutomaticLink(models.Model):
     TARGET_CHOICES = (
         ('_blank', '_blank'),
@@ -32,3 +34,6 @@ class AutomaticLink(models.Model):
         unique_together = (('keyword', 'link'),)
         verbose_name = _('automatic link')
         verbose_name_plural = _('automatic links')
+
+    def __str__(self):
+        return '{}'.format(self.keyword)

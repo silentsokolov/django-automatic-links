@@ -8,15 +8,13 @@ python:
   - "3.4"
 
 env:
+  - DJANGO="django==1.7"
   - DJANGO="django==1.6"
   - DJANGO="django==1.5"
   - DJANGO="django==1.4"
 
 install:
   - pip install $DJANGO
-
-script:
-  - python runtests.py
 
 matrix:
   exclude:
@@ -30,3 +28,6 @@ matrix:
 branches:
   only:
     - master
+
+script:
+  - python runtests.py

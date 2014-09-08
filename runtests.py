@@ -1,42 +1,31 @@
 #!/usr/bin/env python
-import sys
-from os import path
-from django.conf import settings
 
-if not settings.configured:
-    module_root = path.dirname(path.realpath(__file__))
+import django
 
-    settings.configure(
-        DEBUG=False,
-        DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': ':memory:'
-            }
-        },
+from django.conf import settings, global_settings
+from django.test.utils import setup_test_environment
+from django.core.management import call_command
 
-        INSTALLED_APPS=(
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.sites',
-            'django.contrib.admin',
-            'django.contrib.sessions',
-            'automatic_links',
-        ),
-        TEST_RUNNER='django.test.simple.DjangoTestSuiteRunner',
-    )
+settings.configure(
+    MIDDLEWARE_CLASSES=global_settings.MIDDLEWARE_CLASSES,
+    INSTALLED_APPS=(
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sites',
+        'django.contrib.admin',
+        'django.contrib.sessions',
+        'automatic_links',
+    ),
+    DATABASES={
+        'default': {'ENGINE': 'django.db.backends.sqlite3'}
+    }
+)
 
 
-def main():
-    from django.test.utils import get_runner
+setup_test_environment()
 
-    TestRunner = get_runner(settings)
-
-    test_runner = TestRunner()
-
-    failures = test_runner.run_tests(('automatic_links',))
-    sys.exit(failures)
-
+if django.VERSION > (1, 7):
+    django.setup()
 
 if __name__ == '__main__':
-    main()
+    call_command('test', 'automatic_links')

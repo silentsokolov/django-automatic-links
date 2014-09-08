@@ -33,7 +33,7 @@ Open ``settings.py`` and add ``automatic_links`` to your ``INSTALLED_APPS``:
         ...
     )
 
-Run ``manager.py syncdb``
+Run ``manager.py syncdb`` or ``manager.py migrate automatic_links`` for Django >= 1.7
 
 
 Settings

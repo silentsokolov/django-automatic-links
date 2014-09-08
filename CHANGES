@@ -1,3 +1,6 @@
+0.2.2 (2014-09-08)
+    - Add support Django 1.7
+
 0.2.1 (2014-04-07)
     - Fix word boundaries
 
