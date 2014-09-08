@@ -34,4 +34,4 @@ class AutomaticLink(models.Model):
         verbose_name_plural = _('automatic links')
 
     def __unicode__(self):
-        return u'{}'.format(self.keyword)
+        return self.keyword
