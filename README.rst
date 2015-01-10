@@ -7,23 +7,27 @@ django-automatic-links
 django-automatic-links is a reusable application for Django, that allows
 you to adding keywords that will be automatically converted into links.
 
+
+Requirements
+------------
+
+* Python 2.7+ or Python 3.2+
+* Django 1.4+
+
+
 Installation
 ------------
 
-Requires
-~~~~~~~~
+Use your favorite Python package manager to install the app from PyPI, e.g.
 
-::
+Example:
 
-    django >= 1.4
+``pip install django-automatic-links``
 
-Install with ``pip``:
 
-Run ``pip install git+https://github.com/SilentSokolov/django-automatic-links.git``
+Add ``automatic_links`` to ``INSTALLED_APPS``:
 
-Or ``pip install django-automatic-links``
-
-Open ``settings.py`` and add ``automatic_links`` to your ``INSTALLED_APPS``:
+Example:
 
 .. code:: python
 
@@ -33,7 +37,37 @@ Open ``settings.py`` and add ``automatic_links`` to your ``INSTALLED_APPS``:
         ...
     )
 
-Run ``manager.py syncdb`` or ``manager.py migrate automatic_links`` for Django >= 1.7
+
+After run command ``manager.py syncdb``.
+
+Or ``manager.py migrate automatic_links`` for Django >= 1.7
+
+
+Example usage
+-------------
+
+In templates
+~~~~~~~~~~~~
+
+.. code:: html
+
+    {% load automatic_link_tags %}
+    ...
+    <p>{{ object.text|add_links|safe }}</p>
+
+
+In code
+~~~~~~~
+
+.. code:: python
+
+    from automatic_links.utils import render_links
+
+    text = render_links('text')
+
+
+If you have many links and the process takes a long time, you need to
+concern yourself with cache.
 
 
 Settings
@@ -51,27 +85,3 @@ Settings
 
 These values ​​are only used in the model, you will still be able to
 customize for each link their values​​.
-
-
-Example usage
--------------
-
-In templates
-~~~~~~~~~~~~
-
-::
-
-    {% load automatic_link_tags %}
-    {{ object.text|add_links|safe }}
-
-In code
-~~~~~~~
-
-.. code:: python
-
-    from automatic_links.utils import render_links
-
-    text = render_links('text')
-
-If you have many links and the process takes a long time, you need to
-concern yourself with cache.
