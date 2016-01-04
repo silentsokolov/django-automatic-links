@@ -12,7 +12,7 @@ Requirements
 ------------
 
 * Python 2.7+ or Python 3.2+
-* Django 1.4+
+* Django 1.6+
 
 
 Installation
@@ -38,10 +38,7 @@ Example:
     )
 
 
-After run command ``manager.py syncdb``.
-
-Or ``manager.py migrate automatic_links`` for Django >= 1.7
-
+After run command ``manager.py migrate automatic_links``.
 
 Example usage
 -------------

@@ -1,5 +1,10 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 from django import template
-from automatic_links.utils import render_links
+
+from ..utils import render_links
 
 register = template.Library()
 

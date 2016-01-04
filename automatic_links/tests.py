@@ -1,14 +1,19 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 import re
 
-from django.utils import unittest
+from django.test import TestCase
+from django.utils.encoding import force_text
 
-from automatic_links.link import Link
-from automatic_links.models import AutomaticLink
-from automatic_links.templatetags.automatic_link_tags import add_links
-from automatic_links.utils import render_links
+from .link import Link
+from .models import AutomaticLink
+from .templatetags.automatic_link_tags import add_links
+from .utils import render_links
 
 
-class AutomaticLinksTest(unittest.TestCase):
+class AutomaticLinksTest(TestCase):
     def setUp(self):
         self.simple_link = AutomaticLink.objects.create(keyword='keyword', link='/page.html', limit=1)
         self.link_with_space = AutomaticLink.objects.create(keyword='key word', link='/page.html')
@@ -16,6 +21,10 @@ class AutomaticLinksTest(unittest.TestCase):
         self.no_active_link = AutomaticLink.objects.create(active=False, keyword='noactive', link='/page.html')
         self.link_with_params = AutomaticLink.objects.create(keyword='params', link='/page.html',
                                                              css_class='class', nofollow=True)
+
+    def test_name(self):
+        self.assertEqual(force_text(self.link_with_params), self.link_with_params.keyword)
+        # str(self.link_with_params) =
 
     def test_keyword_in_beginning_of_line(self):
         original_text = 'keyword in the beginning of the line'
@@ -91,7 +100,7 @@ class AutomaticLinksTest(unittest.TestCase):
         self.link_with_params.delete()
 
 
-class LinkTest(unittest.TestCase):
+class LinkTest(TestCase):
     def setUp(self):
         self.link = Link('keyword', '/page.html')
 

@@ -1,12 +1,14 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 import re
+
 from itertools import cycle
+
 from django.utils.functional import cached_property
 from django.utils.text import normalize_newlines
-try:
-    from django.utils.encoding import force_text
-except ImportError:
-    # Historical name of force_text(), Django 1.4
-    from django.utils.encoding import force_unicode as force_text
+from django.utils.encoding import force_text
 
 
 class Link(object):
