@@ -19,7 +19,8 @@ settings.configure(
     ),
     DATABASES={
         'default': {'ENGINE': 'django.db.backends.sqlite3'}
-    }
+    },
+    TEST_RUNNER='django.test.runner.DiscoverRunner',
 )
 
 from django.test.utils import setup_test_environment

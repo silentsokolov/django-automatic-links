@@ -1,3 +1,6 @@
+0.2.4 (2016-07-29)
+    - Add support Django 1.10
+
 0.2.3 (2016-01-04)
     - Add support Django 1.9
     - Drop support Django 1.4

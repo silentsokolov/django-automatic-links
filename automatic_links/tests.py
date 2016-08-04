@@ -24,7 +24,6 @@ class AutomaticLinksTest(TestCase):
 
     def test_name(self):
         self.assertEqual(force_text(self.link_with_params), self.link_with_params.keyword)
-        # str(self.link_with_params) =
 
     def test_keyword_in_beginning_of_line(self):
         original_text = 'keyword in the beginning of the line'
