@@ -1,6 +1,10 @@
 .. image:: https://travis-ci.org/silentsokolov/django-automatic-links.png?branch=master
    :target: https://travis-ci.org/silentsokolov/django-automatic-links
 
+.. image:: https://coveralls.io/repos/github/silentsokolov/django-automatic-links/badge.svg
+   :target: https://coveralls.io/github/silentsokolov/django-automatic-links
+
+
 django-automatic-links
 ======================
 
