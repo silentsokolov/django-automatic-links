@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/silentsokolov/django-automatic-links.png?branch=master
+.. image:: https://travis-ci.org/silentsokolov/django-automatic-links.svg?branch=master
    :target: https://travis-ci.org/silentsokolov/django-automatic-links
 
 .. image:: https://coveralls.io/repos/github/silentsokolov/django-automatic-links/badge.svg
