@@ -23,11 +23,7 @@ settings.configure(
     TEST_RUNNER='django.test.runner.DiscoverRunner',
 )
 
-from django.test.utils import setup_test_environment
-setup_test_environment()
-
-if django.VERSION > (1, 7):
-    django.setup()
+django.setup()
 
 if __name__ == '__main__':
     call_command('test', 'automatic_links')

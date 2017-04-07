@@ -1,8 +1,8 @@
 .. image:: https://travis-ci.org/silentsokolov/django-automatic-links.svg?branch=master
    :target: https://travis-ci.org/silentsokolov/django-automatic-links
 
-.. image:: https://coveralls.io/repos/github/silentsokolov/django-automatic-links/badge.svg
-   :target: https://coveralls.io/github/silentsokolov/django-automatic-links
+.. image:: https://codecov.io/gh/silentsokolov/django-automatic-links/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/silentsokolov/django-automatic-links
 
 
 django-automatic-links
@@ -16,7 +16,7 @@ Requirements
 ------------
 
 * Python 2.7+ or Python 3.2+
-* Django 1.6+
+* Django 1.8+
 
 
 Installation
