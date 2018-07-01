@@ -8,7 +8,7 @@
 django-automatic-links
 ======================
 
-django-automatic-links is a reusable application for Django, that allows
+django-automatic-links is a application, that allows
 you to adding keywords that will be automatically converted into links.
 
 
