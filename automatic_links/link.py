@@ -42,7 +42,7 @@ class Link(object):
         Default: r'(?<![^p]>)%s(?!<[^/p])' use re.IGNORECASE
         Ignores all keywords are already in tags, except p
         """
-        keyword = self.keyword.replace(' ', '(\s)').lower()
+        keyword = self.keyword.replace(' ', r'(\s)').lower()
         regex = re.compile(r'(?<![^p]>)%s(\b)' % keyword, re.IGNORECASE)
         return regex
 
